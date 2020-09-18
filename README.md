@@ -11,6 +11,6 @@
   - 프레임워크 : SpringFrameWork
   - 데이터베이스 : Oracle11g
   - 적용 공공데이터(OpenAPI) : 교육부 통합제공 유치원 현황(학급수, 원아수, 교직원 등)
-  - 기타 : `Ajax `Bootstrap 4.0 `JQuery v3.1.1 `JavaScript `Kakao API `AES-128 암호화/복호화
+  - 기타 : `Ajax` `Bootstrap 4.0` `JQuery v3.1.1` `JavaScript` `Kakao API` `AES-128 암호화/복호화`
     
 > 2019년에 작업했지만 GitHub에 커밋을 못했고 이제서야 올립니다.
