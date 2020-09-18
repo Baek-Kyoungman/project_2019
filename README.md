@@ -1,5 +1,9 @@
 # 2019년 한국폴리텍대학 강서캠퍼스 개인프로젝트
 
+#### 2019년에 작업했지만 GitHub에 커밋을 못했고 이제서야 올립니다.
+
+![메인](https://user-images.githubusercontent.com/71207602/93602752-063ea680-f9fe-11ea-85ca-afed607c07ac.png)
+
  - 제  목 : 서울시 유치원 위치 및 상세 정보 조회 - KIDO
  - 설  명 : 
 
