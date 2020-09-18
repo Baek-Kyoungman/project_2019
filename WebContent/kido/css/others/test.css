@@ -1,0 +1,119 @@
+/*19.09.26 10:51*/
+.btn-primary {
+	padding: 10px;
+	font-size: 1rem;
+	float: right;
+}
+
+.notice-btn {
+	width: 100%;
+	position: relative;
+	margin-bottom: 2.5rem;
+}
+
+.notice-btn .btn-secondary {
+	float: right;
+	padding-left: 30px;
+	padding-right: 30px;
+	border-radius: 0;
+}
+
+.btn-secondary:hover {
+	background-color: #000000;
+	color: #ffffff;
+}
+
+.btn_move {
+	float: left;
+	width: 98px;
+	height: 38px;
+	margin-right: 10px;
+	border: 1px solid #1e1e1e;
+	font-size: 14px;
+	line-height: 38px;
+	color: #1e1e1e;
+	font-family: 'NotoSans Regular', 'Malgun Gothic', '맑은 고딕',
+		'Apple SD Gothic Neo', '돋움', dotum, sans-serif;
+	text-align: center;
+	text-decoration: none;
+}
+
+.btn_move:hover {
+	background-color: #000000;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.btn_list {
+	float: right;
+	width: 100px;
+	height: 40px;
+	font-size: 14px;
+	line-height: 40px;
+	font-family: 'NotoSans Regular', 'Malgun Gothic', '맑은 고딕',
+		'Apple SD Gothic Neo', '돋움', dotum, sans-serif;
+	color: #fff;
+	background-color: #4d4d4d;
+	text-align: center;
+	text-decoration: none;
+}
+
+.btn_list:hover {
+	background-color: #000000;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.board-btn {
+	float: right;
+	min-width: 100px;
+	height: 35px;
+	background-color: #926fe4;
+	border-radius: 0;
+	color: #fff;
+	font-weight: 500;
+	font-size: 15px;
+	-webkit-transition-duration: 500ms;
+	transition-duration: 500ms;
+}
+
+.board-btn:hover {
+	background-color: #5735a5;
+	border-radius: 0;
+	color: #fff;
+	font-weight: 500;
+	font-size: 15px;
+	-webkit-transition-duration: 500ms;
+	transition-duration: 500ms;
+}
+
+.detail-area {
+	min-height: 580px;
+}
+
+.pageDetail-area {
+	margin-top: 50px;
+}
+
+.comment-btn-free {
+	background-color: #ffffff;
+	color: #848484;
+	font-size: 14px;
+	line-height: 1.5;
+	font-weight: 400;
+	font-family: 'NotoSans Regular', 'Malgun Gothic', '맑은 고딕',
+		'Apple SD Gothic Neo', '돋움', dotum, sans-serif;
+}
+.btn_c {
+	float: left;
+	width: 98px;
+	height: 38px;
+	margin-right: 10px;
+	font-size: 14px;
+	line-height: 38px;
+	color: #1e1e1e;
+	font-family: 'NotoSans Regular', 'Malgun Gothic', '맑은 고딕',
+		'Apple SD Gothic Neo', '돋움', dotum, sans-serif;
+	text-align: center;
+	text-decoration: none;
+}

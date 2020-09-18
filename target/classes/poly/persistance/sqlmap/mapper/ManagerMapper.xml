@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- JAVA와 연결할 Mapper 파일 설정 -->
+<mapper namespace="poly.persistance.mapper.ManagerMapper">
+
+	<!-- 관리자 회원탈퇴 -->
+	<update id="deleteUserInfo" parameterType="String">
+		UPDATE
+			USER_INFO
+		SET
+			USER_STAT = 2,
+			USER_DEL = SYSDATE
+		WHERE
+			USER_ID = #{user_id}
+	</update>
+
+	<!-- 관리자 비밀번호 변경 -->
+	<update id="updateUserPassword" parameterType="UserInfoDTO">
+		UPDATE
+			USER_INFO
+		SET
+			PASSWORD = #{password}
+		WHERE
+			USER_ID = #{user_id}
+	</update>
+
+	<!-- 관리자 이메일 변경 -->
+	<update id="updateUserEmail" parameterType="UserInfoDTO">
+		UPDATE
+			USER_INFO
+		SET
+			EMAIL = #{email}
+		WHERE
+			USER_ID = #{user_id}
+	</update>
+
+	<!-- 관리자 직업 변경 -->
+	<update id="updateUserJob" parameterType="UserInfoDTO">
+		UPDATE
+			USER_INFO
+		SET
+			USER_JOB = #{user_job}
+		WHERE
+			USER_ID = #{user_id}
+	</update>
+
+	<!-- 관리자 사용자 리스트 -->
+	<select id="getManager_UserList" resultType="UserInfoDTO">
+<!-- 		SELECT
+			USER_ID,
+			USER_NAME,
+			EMAIL,
+			USER_JOB,
+			REG_DT,
+			USER_AUTHOR,
+			USER_STAT
+		FROM
+			USER_INFO -->
+		<![CDATA[
+		SELECT
+			USER_ID,
+			USER_NAME,
+			EMAIL,
+			USER_JOB,
+			REG_DT,
+			USER_AUTHOR,
+			USER_STAT,
+			USER_SEQ
+		FROM
+			(
+				SELECT
+					A.*,
+					ROWNUM AS RNUM
+				FROM
+					(
+						SELECT
+							*
+						FROM 
+							USER_INFO
+						ORDER BY 
+							USER_SEQ DESC
+					) A
+				WHERE
+					ROWNUM <= #{endNum}
+			)
+		WHERE
+			RNUM >= #{startNum}
+		]]>			
+	</select>
+
+	<select id="getUserInfo" parameterType="String"
+		resultType="UserInfoDTO">
+		SELECT
+			USER_AUTHOR,
+			USER_STAT
+		FROM
+			USER_INFO
+		WHERE
+			USER_ID=#{user_id}
+	</select>
+
+	<update id="alterAuthor" parameterType="String">
+		UPDATE
+			USER_INFO
+		SET
+			USER_AUTHOR = 1
+		WHERE
+			USER_ID = #{userCheck}
+	</update>
+
+	<update id="alterUser" parameterType="String">
+		UPDATE
+			USER_INFO
+		SET
+			USER_AUTHOR = 0
+		WHERE
+			USER_ID = #{userCheck}
+	</update>
+
+	<update id="alterStop" parameterType="String">
+		UPDATE
+			USER_INFO
+		SET
+			USER_STAT = 1
+		WHERE
+			USER_ID = #{userCheck}
+	</update>
+
+	<update id="alterNomal" parameterType="String">
+		UPDATE
+			USER_INFO
+		SET
+			USER_STAT = 0,
+			USER_DEL = '2000-01-01'
+		WHERE
+			USER_ID = #{userCheck}
+	</update>
+
+	<update id="alterDel" parameterType="String">
+		UPDATE
+			USER_INFO
+		SET
+			USER_STAT = 2,
+			USER_DEL = SYSDATE
+		WHERE
+			USER_ID = #{userCheck}
+	</update>
+
+	<!-- 관리페이지 유치원 리스트 -->
+	<select id="getManager_kidList" resultType="KidInfoDTO">
+		<!-- SELECT
+			KID_SEQ,
+			OFFICEEDU,
+			SUBOFFICEEDU,
+			KINDERNAME,
+			ESTABLISH,
+			EDATE,
+			ODATE,
+			ADDR,
+			TELNO,
+			HPADDR,
+			OPERTIME,
+			CLCNT3,
+			CLCNT4,
+			CLCNT5,
+			MIXCLCNT,
+			SHCLCNT,
+			PPCNT3,
+			PPCNT4,
+			PPCNT5,
+			RPPNNAME,
+			LDGRNAME,
+			MIXPPCNT,
+			SHPPCNT
+		FROM
+			KID_INFO
+		ORDER BY KID_SEQ ASC -->
+		<![CDATA[
+		SELECT
+			KID_SEQ,
+			OFFICEEDU,
+			SUBOFFICEEDU,
+			KINDERNAME,
+			ESTABLISH,
+			EDATE,
+			ODATE,
+			ADDR,
+			TELNO,
+			HPADDR,
+			OPERTIME,
+			CLCNT3,
+			CLCNT4,
+			CLCNT5,
+			MIXCLCNT,
+			SHCLCNT,
+			PPCNT3,
+			PPCNT4,
+			PPCNT5,
+			RPPNNAME,
+			LDGRNAME,
+			MIXPPCNT,
+			SHPPCNT
+		FROM
+			(
+				SELECT
+					A.*,
+					ROWNUM AS RNUM
+				FROM
+					(
+						SELECT
+							*
+						FROM 
+							KID_INFO
+						ORDER BY 
+							KID_SEQ DESC
+					) A
+				WHERE
+					ROWNUM <= #{endNum}
+			)
+		WHERE
+			RNUM >= #{startNum}
+		]]>
+	</select>
+
+	<!-- 유치원 갯수 -->
+	<select id="getKidCnt" resultType="String">
+		SELECT
+			COUNT(KID_SEQ)
+		FROM
+			KID_INFO
+	</select>
+
+	<!-- 유치원 상세보기 -->
+	<select id="getKidDetail" parameterType="int" resultType="KidInfoDTO">
+		SELECT
+			KID_SEQ,
+			OFFICEEDU,
+			SUBOFFICEEDU,
+			KINDERNAME,
+			ESTABLISH,
+			EDATE,
+			ODATE,
+			ADDR,
+			TELNO,
+			HPADDR,
+			OPERTIME,
+			CLCNT3,
+			CLCNT4,
+			CLCNT5,
+			MIXCLCNT,
+			SHCLCNT,
+			PPCNT3,
+			PPCNT4,
+			PPCNT5,
+			RPPNNAME,
+			LDGRNAME,
+			MIXPPCNT,
+			SHPPCNT
+		FROM
+			KID_INFO
+		WHERE
+			KID_SEQ = #{kid_seq}
+	</select>
+	
+	<!-- 유치원 등록 -->
+	<insert id="insertKidInfo" parameterType="KidInfoDTO">
+		INSERT INTO KID_INFO
+		(
+			  KID_SEQ,
+			  KINDERNAME,
+			  RPPNNAME,
+			  LDGRNAME,
+			  ESTABLISH,
+			  EDATE,
+			  ODATE,
+			  OFFICEEDU,
+			  SUBOFFICEEDU,
+			  HPADDR,
+			  OPERTIME,
+			  TELNO,
+			  ADDR,
+			  CLCNT3,
+			  CLCNT4,
+			  CLCNT5,
+			  MIXCLCNT,
+			  SHCLCNT,
+			  PPCNT3,
+			  PPCNT4,
+			  PPCNT5,
+			  MIXPPCNT,
+			  SHPPCNT
+		) 
+		
+		VALUES
+		( 
+			KID_SEQ.NEXTVAL,
+			#{kindername},
+			#{rppnname},
+			#{ldgrname},
+			#{establish},
+			#{edate},
+			#{odate},
+			#{officeedu},
+			#{subofficeedu},
+			#{hpaddr},
+			#{opertime},
+			#{telno},
+			#{addr},
+			#{clcnt3},
+			#{clcnt4},
+			#{clcnt5},
+			#{mixclcnt},
+			#{shclcnt},
+			#{ppcnt3},
+			#{ppcnt4},
+			#{ppcnt5},
+			#{mixppcnt},
+			#{shppcnt} 
+		)
+
+	</insert>
+	
+	<!-- 유치원 삭제 -->
+	<delete id="deleteKidInfo" parameterType="String">
+		DELETE
+		FROM
+			KID_INFO
+		WHERE
+			KID_SEQ = #{kid_seq}
+	</delete>		
+	
+	<!-- 유치원 수정 -->
+	<update id="updateKid" parameterType="KidInfoDTO">
+		UPDATE
+			KID_INFO
+		SET
+			KINDERNAME = #{kindername},
+			RPPNNAME = #{rppnname},
+			LDGRNAME = #{ldgrname},
+			ESTABLISH = #{establish},
+			EDATE = #{edate},
+			ODATE = #{odate},
+			OFFICEEDU = #{officeedu},
+			SUBOFFICEEDU = #{subofficeedu},
+			HPADDR = #{hpaddr},
+			OPERTIME = #{opertime},
+			TELNO = #{telno},
+			ADDR = #{addr},
+			CLCNT3 = #{clcnt3},
+			CLCNT4 = #{clcnt4},
+			CLCNT5 = #{clcnt5},
+			MIXCLCNT = #{mixclcnt},
+			SHCLCNT = #{shclcnt},
+			PPCNT3 = #{ppcnt3},
+			PPCNT4 = #{ppcnt4},
+			PPCNT5 = #{ppcnt4},
+			MIXPPCNT = #{mixppcnt},
+			SHPPCNT = #{shppcnt}
+		WHERE
+			KID_SEQ = #{kid_seq}
+	</update>
+	
+	<select id="getUserCnt" resultType="String">
+		SELECT
+			COUNT(USER_SEQ)
+		FROM
+			USER_INFO
+	</select>	
+</mapper>

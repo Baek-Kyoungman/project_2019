@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
+		<!-- 사용할 DTO 등록 -->
+		<typeAlias type="poly.dto.NoticeDTO" alias="NoticeDTO" />
+		<typeAlias type="poly.dto.ReviewDTO" alias="ReviewDTO" />
+		<typeAlias type="poly.dto.FreeDTO" alias="FreeDTO" />
+		<typeAlias type="poly.dto.UserInfoDTO" alias="UserInfoDTO" />
+		<typeAlias type="poly.dto.KidInfoDTO" alias="KidInfoDTO" />
+		<typeAlias type="poly.dto.R_CommentDTO" alias="R_CommentDTO" />
+		<typeAlias type="poly.dto.F_CommentDTO" alias="F_CommentDTO" />
+	</typeAliases>
+</configuration>

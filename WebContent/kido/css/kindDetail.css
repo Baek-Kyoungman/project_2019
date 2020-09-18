@@ -1,0 +1,286 @@
+.content {
+	font-size: 0.85rem;
+}
+
+.rightContent {
+	width: 785px;
+	background: #fff;
+}
+
+.leftMenu, .rightContent {
+	float: left;
+	margin-top: 35px;
+	margin-bottom: 35px;
+	/* box-shadow: 0 0.1em 3px #424242 !important; */
+}
+
+.leftMenu, .manager-rightContent {
+	margin: 35px;
+}
+
+.kinderInfo {
+	height: auto;
+}
+
+.pageTitle {
+	padding: 40px 25px 0;
+	height: 15px;
+	/* border-bottom: 1px solid #E5E5E5; */
+}
+
+.pageTitle p {
+	float: right;
+	line-height: 18px;
+}
+
+.pageTitle a {
+	color: #000;
+}
+
+a {
+	text-decoration: none;
+	color: #5A5A5A;
+	/* outline: none; */
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+
+.pageTitle span {
+	padding: 0 3px;
+	color: #464646;
+	font-size: 10px;
+}
+
+.kinderInfo h1 {
+	float: none;
+	font-size: 20px;
+	line-height: 24px;
+	margin-top: 10px;
+	margin-bottom: -5px;
+}
+
+.pageTitle h1 {
+	float: left;
+	font-size: 25px;
+	color: #000;
+	margin-top: -8px;
+	font-weight: bold;
+	line-height: 25px;
+}
+
+.pageTitle h1 span {
+	font-size: 13px;
+	padding-left: 7px;
+}
+
+.pageTitle span {
+	padding: 0 3px;
+	color: #464646;
+	font-size: 10px;
+}
+
+.pageBox {
+	padding: 20px 25px 25px;
+}
+
+.tblTapForm {
+	margin-bottom: 30px;
+	font-size: 12px;
+}
+
+.tblTapForm .form {
+	overflow: hidden;
+}
+
+.tblTapForm .form ul {
+	border-top: 1px solid #E2E2E2;
+	border-left: 1px solid #E2E2E2;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+.tblTapForm .form li.active {
+	background-color: #FFAD2B !important;
+}
+
+.tblTapForm .form li {
+	float: left;
+	width: 20%;
+	height: 35px;
+	border-right: 1px solid #E2E2E2;
+	border-bottom: 1px solid #E2E2E2;
+	box-sizing: border-box;
+	font-size: 13px;
+}
+
+.tblTapForm .form li.active a {
+	color: #fff;
+}
+
+.tblTapForm .form li a {
+	display: block;
+	width: 100%;
+	line-height: 15px;
+	height: 13px;
+	padding: 10px 0;
+	text-align: center;
+}
+
+.tableList .content table tr th {
+	background: #f3f3f3;
+	padding: 8px 5px;
+	font-weight: bold;
+	color: #333;
+	border-bottom: 1px solid #dbdbdb;
+	border-left: 1px solid #dbdbdb;
+	line-height: 16px;
+}
+
+table tr th {
+	letter-spacing: -0.5px;
+}
+
+.tableList .content table tr td {
+	border-bottom: 1px solid #dbdbdb;
+	border-left: 1px solid #dbdbdb;
+	padding: 8px 10px;
+	line-height: 16px;
+}
+
+.tapContentTitle h3 {
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 30px;
+	color: #000;
+	margin-right: 15px;
+	float: left;
+}
+
+.tableList .mapAPI .api {
+	border: 1px solid #d2d2d2;
+	height: 320px;
+}
+
+.tableList .content table tr td {
+	border-bottom: 1px solid #dbdbdb;
+	border-left: 1px solid #dbdbdb;
+	padding: 8px 10px;
+	line-height: 16px;
+}
+
+.tableList .content div row col-lg-10 {
+	border-bottom: 1px solid #dbdbdb;
+	border-left: 1px solid #dbdbdb;
+	padding: 8px 10px;
+	line-height: 16px;
+}
+
+.jqplot-target {
+	position: relative;
+	color: #666666;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 1em;
+}
+
+.pageTitle a {
+	color: #000;
+}
+
+.kinderInfo p {
+	float: none;
+	text-align: right;
+}
+
+.tapContentTitle {
+	margin: 100px 0 10px;
+	position: relative;
+}
+
+.tableList .content table tr th {
+	background: #f3f3f3;
+	padding: 8px 5px;
+	font-weight: bold;
+	color: #333;
+	border-bottom: 1px solid #dbdbdb;
+	border-left: 1px solid #dbdbdb;
+	line-height: 16px;
+}
+
+.tableList .content div row col-lg-2 {
+	background: #f3f3f3;
+	padding: 8px 5px;
+	font-weight: bold;
+	color: #333;
+	border-bottom: 1px solid #dbdbdb;
+	border-left: 1px solid #dbdbdb;
+	line-height: 16px;
+}
+
+.tableList .content table {
+	border-top: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+	table-layout: fixed;
+	margin-left: -1px;
+	padding: 50px;
+}
+
+.tableList .content div {
+	border-top: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+	table-layout: fixed;
+	margin-left: -1px;
+	padding: 50px;
+}
+
+.pageBtn a.green {
+	background: #662cf0;
+	color: #fff;
+}
+
+.pageBtn a.green:hover {
+	background: #5116db;
+	color: #fff;
+}
+
+.pageBtn input.green {
+	background: #662cf0;
+	color: #fff;
+}
+
+.pageBtn input.green:hover {
+	background: #5116db;
+	color: #fff;
+}
+
+.pageBtn {
+	text-align: center;
+	height: 50px;
+	margin: 20px 0;
+}
+
+.pageBtn a {
+	padding: 12px 40px;
+	margin: 0 5px;
+	background: #d2d2d2;
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 3px;
+}
+
+.pageBtn input {
+	padding: 12px 40px;
+	margin: 0 5px;
+	background: #d2d2d2;
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 3px;
+}
+
+.reg_input {
+	width: 50px;
+}

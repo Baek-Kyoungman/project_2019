@@ -1,0 +1,37 @@
+/*선택*/
+.category{
+    width: 100%;
+    font-size: 1rem;
+}
+
+.form-area{
+    min-height: 500px;
+    width: 1000px;
+}
+.form-area-kid{
+    min-height: 500px;
+    width: 900px;
+}
+.form-margin-bottom{
+    margin-bottom: 10px;
+}
+.btn-board{
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    color: #000000;
+}
+.btn-board:hover{
+    background-color: #000000;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+.board-area{
+    min-height: 320px;
+}
+tbody tr a{
+    color: #212529;
+}
+tbody tr a:hover{
+    text-decoration: none;
+    color: #212529;
+}

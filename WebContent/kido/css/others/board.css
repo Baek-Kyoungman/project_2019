@@ -1,0 +1,28 @@
+.comment-st {
+	width: 700px;
+	height: 30px;
+	margin-bottom: 1rem;
+	font-size: 0.75rem;
+}
+
+.comment_list_btn {
+	background-color: #bb66dd;
+	padding: 0 15px;
+	line-height: 40px;
+	color: #fff;
+	font-weight: 600;
+	font-size: 15px;
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.comment_list_btn:hover {
+	background-color: #8d06c2;
+	padding: 0 15px;
+	line-height: 40px;
+	color: #fff;
+	font-weight: 600;
+	font-size: 15px;
+	text-align: center;
+	margin-bottom: 40px;
+}

@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- JAVA와 연결할 Mapper 파일 설정 -->
+<mapper namespace="poly.persistance.mapper.ReviewMapper">
+
+	<!-- 리뷰게시판 등록 -->
+	<insert id="insertReviewInfo" parameterType="ReviewDTO">
+		INSERT INTO REVIEW
+		(
+			REVIEW_SEQ,
+			TITLE,
+			CONTENTS,
+			READ_CNT,
+			USER_ID,
+			REG_DT,
+			REG_ID,
+			CHG_DT,
+			CHG_ID,
+			SIDOCODE,
+			SGGCODE,
+			TYPE
+		)
+
+		VALUES
+		(
+			REVIEW_SEQ.NEXTVAL,
+			#{title},
+			#{contents},
+			0,
+			#{reg_id},
+			SYSDATE,
+			#{reg_id},
+			SYSDATE,
+			#{reg_id},
+			#{sidoCode},
+			#{sggCode},
+			#{type}
+		)
+
+	</insert>
+
+	<!-- 리뷰리스트 -->
+	<select id="getReviewList" parameterType="int"
+		resultType="ReviewDTO">
+		<![CDATA[
+		SELECT
+			TITLE,
+			CONTENTS,
+			USER_ID,
+			REG_DT,
+			CHG_DT,
+			READ_CNT,
+			REVIEW_SEQ,
+			SIDOCODE,
+			SGGCODE,
+			TYPE
+		FROM
+			(
+				SELECT
+					A.*,
+					ROWNUM AS RNUM
+				FROM
+					(
+						SELECT
+							*
+						FROM 
+							REVIEW
+						ORDER BY 
+							REVIEW_SEQ DESC
+					) A
+				WHERE
+					ROWNUM <= #{endNum}
+			)
+		WHERE
+			RNUM >= #{startNum}
+		]]>
+	</select>
+
+
+	<!-- 리뷰게시판 상세보기 -->
+	<select id="getReviewDetail" parameterType="int"
+		resultType="ReviewDTO">
+		SELECT
+			REVIEW_SEQ,
+			TITLE,
+			CONTENTS,
+			READ_CNT,
+			USER_ID,
+			REG_ID,
+			REG_DT,
+			CHG_DT,
+			CHG_ID,
+			SGGCODE,
+			SIDOCODE,
+			TYPE
+		FROM
+			REVIEW
+		WHERE
+			REVIEW_SEQ = #{review_seq}
+	</select>
+
+	<!-- 리뷰게시판 갯수 -->
+	<select id="getReviewCnt" resultType="String">
+		SELECT
+			COUNT(REVIEW_SEQ)
+		FROM
+			REVIEW
+	</select>
+
+	<!-- 마이페이지 리뷰게시판 리스트 -->
+	<select id="getMypage_reviewList" resultType="ReviewDTO">
+		<![CDATA[
+		SELECT
+			TITLE,
+			CONTENTS,
+			USER_ID,
+			REG_DT,
+			CHG_DT,
+			READ_CNT,
+			REVIEW_SEQ,
+			SGGCODE,
+			SIDOCODE,
+			TYPE
+		FROM
+			(
+				SELECT
+					A.*,
+					ROWNUM AS RNUM
+				FROM
+					(
+						SELECT
+							*
+						FROM 
+							REVIEW
+						WHERE
+							USER_ID=#{user_id}
+						ORDER BY 
+							REVIEW_SEQ DESC
+					) A
+				WHERE
+					ROWNUM <= #{endNum}
+			)
+		WHERE
+			RNUM >= #{startNum}
+		]]> 
+		
+	</select>
+
+	<!-- 마이페이지 리뷰게시판 갯수 -->
+	<select id="getMypage_ReviewCnt" resultType="String">
+		SELECT
+			COUNT(REVIEW_SEQ)
+		FROM
+			REVIEW
+		WHERE
+			USER_ID = #{user_id}
+	</select>
+	
+	<!-- 마이페이지 리뷰게시판 상세보기 -->
+	<select id="getMypage_reviewDetail" parameterType="int"
+		resultType="ReviewDTO">
+		SELECT
+			REVIEW_SEQ,
+			TITLE,
+			CONTENTS,
+			READ_CNT,
+			USER_ID,
+			REG_ID,
+			REG_DT,
+			CHG_DT,
+			CHG_ID,
+			SGGCODE,
+			SIDOCODE,
+			TYPE
+		FROM
+			REVIEW
+		WHERE
+			REVIEW_SEQ = #{review_seq}
+	</select>
+
+	<!-- 리뷰게시판 삭제 -->
+	<delete id="deleteReviewInfo" parameterType="String">
+		DELETE FROM
+			REVIEW
+		WHERE
+			REVIEW_SEQ = #{review_seq}
+	</delete>
+
+	<!-- 마이페이지 리뷰게시판 수정 -->
+	<update id="updateReview" parameterType="ReviewDTO">
+		UPDATE
+			REVIEW
+		SET
+			TITLE = #{title},
+			CONTENTS = #{contents},
+			SIDOCODE = #{sidoCode},
+			SGGCODE = #{sggCode},
+			TYPE = #{type}
+		WHERE
+			REVIEW_SEQ = #{review_seq}
+
+	</update>
+
+	<!-- 조회수 증가 -->
+	<update id="updateRead_cnt" parameterType="String">
+		UPDATE
+			REVIEW
+		SET
+			READ_CNT = READ_CNT + 1
+		WHERE
+			REVIEW_SEQ=#{review_seq}
+	</update>
+
+	<!-- 관리페이지 리뷰게시판 리스트 -->
+	<select id="getManager_reviewList" resultType="ReviewDTO">
+		<![CDATA[
+		SELECT
+			TITLE,
+			CONTENTS,
+			USER_ID,
+			REG_DT,
+			CHG_DT,
+			READ_CNT,
+			REVIEW_SEQ,
+			SGGCODE,
+			SIDOCODE,
+			TYPE
+		FROM
+			(
+				SELECT
+					A.*,
+					ROWNUM AS RNUM
+				FROM
+					(
+						SELECT
+							*
+						FROM 
+							REVIEW
+						ORDER BY 
+							REVIEW_SEQ DESC
+					) A
+				WHERE
+					ROWNUM <= #{endNum}
+			)
+		WHERE
+			RNUM >= #{startNum}
+		]]>
+	</select>
+
+	<select id="getIndexList" resultType="ReviewDTO">
+		<![CDATA[
+		SELECT
+			TITLE,
+			USER_ID,
+			REVIEW_SEQ
+		FROM
+			(
+				SELECT
+				 	*
+				FROM
+					REVIEW
+				ORDER BY
+					REVIEW_SEQ DESC
+			)
+		WHERE
+			ROWNUM <= 6
+		]]>
+	</select>
+
+</mapper>

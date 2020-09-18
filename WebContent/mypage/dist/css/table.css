@@ -1,0 +1,328 @@
+.table {
+	padding: 20px;
+	margin-top: 50px;
+}
+
+.btn-list {
+	margin-right: 5px;
+	border: 1px solid #dee2e6;
+	background-color: #ffffff;
+	padding: 10px;
+	font-size: 0.8rem;
+	margin-bottom: 5px;
+	margin-top: 20px;
+}
+
+.btn-list:hover {
+	background-color: #e4e4e4;
+}
+
+.table-area {
+	background-color: white;
+	min-height: 700px;
+}
+
+.lg-3-st {
+	background: #f3f3f3;
+	padding: 10px 10px;
+	font-weight: bold;
+	color: #333;
+	border-bottom: 1px solid #dbdbdb;
+	border-left: 1px solid #dbdbdb;
+	line-height: 16px;
+	letter-spacing: -0.5px;
+	font-size: 0.85rem;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Helvetica Neue, Arial, sans-serif;
+}
+
+.lg-9-st {
+	border-bottom: 1px solid #dbdbdb;
+	border-left: 1px solid #dbdbdb;
+	padding: 10px 10px;
+	line-height: 16px;
+	font-size: 0.8rem;
+}
+
+.input-st {
+	display: block;
+	line-height: 1.5;
+	color: #495057;
+	background-color: #fff;
+	border: 1px solid #ced4da;
+	border-radius: .25rem;
+}
+
+.cell-top {
+	background: #f3f3f3;
+	padding: 10px 10px;
+	font-weight: bold;
+	line-height: 16px;
+	letter-spacing: -0.5px;
+	font-size: 0.85rem;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Helvetica Neue, Arial, sans-serif;
+}
+
+.cell-top-1 {
+	text-align: center;
+	background: #f3f3f3;
+	padding: 10px 10px;
+	font-weight: bold;
+	line-height: 16px;
+	letter-spacing: -0.5px;
+	font-size: 0.85rem;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Helvetica Neue, Arial, sans-serif;
+}
+
+.cell-top-2 {
+	background: #f3f3f3;
+	padding: 10px 10px;
+	font-weight: bold;
+	line-height: 16px;
+	letter-spacing: -0.5px;
+	font-size: 0.85rem;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Helvetica Neue, Arial, sans-serif;
+}
+
+.cell-top-3 {
+	background: #f3f3f3;
+	padding: 10px 10px;
+	font-weight: bold;
+	line-height: 16px;
+	letter-spacing: -0.5px;
+	font-size: 0.85rem;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Helvetica Neue, Arial, sans-serif;
+}
+
+.cell-top-4 {
+	background: #f3f3f3;
+	padding: 10px 10px;
+	font-weight: bold;
+	line-height: 16px;
+	letter-spacing: -0.5px;
+	font-size: 0.85rem;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Helvetica Neue, Arial, sans-serif;
+}
+
+.cell-top-5 {
+	background: #f3f3f3;
+	padding: 10px 10px;
+	font-weight: bold;
+	line-height: 16px;
+	letter-spacing: -0.5px;
+	font-size: 0.85rem;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Helvetica Neue, Arial, sans-serif;
+}
+
+.cell-top-6 {
+	background: #f3f3f3;
+	padding: 10px 10px;
+	font-weight: bold;
+	line-height: 16px;
+	letter-spacing: -0.5px;
+	font-size: 0.85rem;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Helvetica Neue, Arial, sans-serif;
+}
+
+.cell {
+	border: 1px solid #dbdbdb;
+	padding: 10px 10px;
+	line-height: 16px;
+	letter-spacing: -0.5px;
+	font-size: 0.85rem;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Helvetica Neue, Arial, sans-serif;
+	height: 41px;
+}
+
+.cell-1 {
+	border: 1px solid #dbdbdb;
+	padding: 10px 10px;
+	line-height: 16px;
+	letter-spacing: -0.5px;
+	font-size: 0.85rem;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Helvetica Neue, Arial, sans-serif;
+	height: 41px;
+}
+.cell-1 a {
+	text-decoration: none;
+	color: #212529;
+	font-size: 0.85rem;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Helvetica Neue, Arial, sans-serif;
+}
+.cell-1 a:hover {
+	text-decoration: none;
+	color: #212529;
+	font-size: 0.85rem;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Helvetica Neue, Arial, sans-serif;
+}
+.cell-r {
+	text-decoration: none;
+	color: #212529;
+	font-size: 0.85rem;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Helvetica Neue, Arial, sans-serif;
+}
+.cell-r:hover {
+	text-decoration: none;
+	color: #212529;
+	font-size: 0.85rem;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Helvetica Neue, Arial, sans-serif;
+}
+.cell-2 {
+	border: 1px solid #dbdbdb;
+	padding: 10px 10px;
+	line-height: 16px;
+	letter-spacing: -0.5px;
+	font-size: 0.85rem;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Helvetica Neue, Arial, sans-serif;
+	height: 41px;
+}
+
+.cell-3 {
+	border: 1px solid #dbdbdb;
+	padding: 10px 10px;
+	line-height: 16px;
+	letter-spacing: -0.5px;
+	font-size: 0.8rem;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Helvetica Neue, Arial, sans-serif;
+	height: 41px;
+}
+
+.cell-4 {
+	border: 1px solid #dbdbdb;
+	padding: 10px 10px;
+	line-height: 16px;
+	letter-spacing: -0.5px;
+	font-size: 0.7rem;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Helvetica Neue, Arial, sans-serif;
+	height: 41px;
+}
+
+.cell-5 {
+	border: 1px solid #dbdbdb;
+	padding: 10px 10px;
+	line-height: 16px;
+	letter-spacing: -0.5px;
+	font-size: 0.85rem;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Helvetica Neue, Arial, sans-serif;
+	height: 41px;
+}
+
+.cell-6 {
+	border: 1px solid #dbdbdb;
+	padding: 10px 10px;
+	line-height: 16px;
+	letter-spacing: -0.5px;
+	font-size: 0.85rem;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Helvetica Neue, Arial, sans-serif;
+	height: 41px;
+}
+
+.cell-3 a:link {
+	text-decoration: none;
+	color: #000000;
+}
+
+.cell-3 a:active {
+	text-decoration: none;
+	color: #000000;
+}
+
+.cell-3 a:hover {
+	text-decoration: none;
+	color: #000000;
+}
+
+.cell-3 a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+
+.cell-3 a {
+	color: #0000000;
+}
+
+.user-cell-3 {
+	border: 1px solid #dbdbdb;
+	padding: 10px 10px;
+	line-height: 16px;
+	letter-spacing: -0.5px;
+	font-size: 0.8rem;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Helvetica Neue, Arial, sans-serif;
+	height: 41px;
+}
+
+.user-cell-3 a:link {
+	text-decoration: none;
+	color: #000000;
+}
+
+.user-cell-3 a:active {
+	text-decoration: none;
+	color: #000000;
+}
+
+.user-cell-3 a:hover {
+	text-decoration: none;
+	color: #000000;
+}
+
+.user-cell-3 a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+
+.user-cell-3 a {
+	color: #0000000;
+}
+
+.manager-btn {
+	margin-left: 35px;
+}
+
+.pagination>li {
+	display: inline;
+}
+
+.pagination>li>a {
+	position: relative;
+	padding: 3px 6px;
+	float: left;
+	margin-left: -1px;
+	line-height: 1.42857143;
+	color: #000000;
+	text-decoration: none;
+	background-color: #ffffff;
+	border: 1px solid #ddd;
+}
+
+.pagination>li>span {
+	position: relative;
+	padding: 3px 6px;
+	float: left;
+	margin-left: -1px;
+	line-height: 1.42857143;
+	color: #000000;
+	text-decoration: none;
+	background-color: #f3f3f3;
+	border: 1px solid #ddd;
+	font-weight: bold;
+}

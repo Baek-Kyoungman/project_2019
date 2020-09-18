@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- JAVA와 연결한 Mapper 파일 설정 -->
+<mapper namespace="poly.persistance.mapper.SearchMapper">
+  
+   <!-- 리뷰게시판 검색 실행 -->
+   <select id="searchReview" resultType="ReviewDTO">
+		SELECT
+			TITLE,
+			CONTENTS,
+			USER_ID,
+			REG_DT,
+			CHG_DT,
+			READ_CNT,
+			REVIEW_SEQ,
+			SIDOCODE,
+			SGGCODE,
+			TYPE
+		FROM
+         	REVIEW
+		WHERE
+        	SIDOCODE = #{sidoCode} AND SGGCODE = #{sggCode} AND TYPE  = #{type}
+        ORDER BY  REVIEW_SEQ DESC
+   </select>
+   
+   <!-- 자유게시판 검색 실행 -->
+   <select id="searchFree" resultType="FreeDTO">
+		SELECT
+			TITLE,
+			CONTENTS,
+			USER_ID,
+			REG_DT,
+			CHG_DT,
+			READ_CNT,
+			FREE_SEQ,
+			SIDOCODE,
+			SGGCODE,
+			TYPE
+		FROM
+         	FREE
+		WHERE
+        	SIDOCODE = #{sidoCode} AND SGGCODE = #{sggCode} AND TYPE  = #{type}
+		ORDER BY  FREE_SEQ DESC
+   </select>
+</mapper>

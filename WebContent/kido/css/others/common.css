@@ -1,0 +1,62 @@
+/*개인정보 취급방침,이용자약관,커뮤니티 운영방침*/
+.ui.center.aligned.header, .ui.centered.header {
+	text-align: center;
+}
+
+.ui.vertical.doubling.stripe.segment .ui.container .header {
+	color: #666;
+	margin-bottom: 2em;
+}
+
+h1.ui.header {
+	font-size: 2rem;
+}
+
+.ui.header {
+	border: none;
+	margin: calc(2rem - .14285714em) 0 1rem;
+	padding: 0 0;
+	font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	font-weight: 700;
+	line-height: 1.28571429em;
+	text-transform: none;
+	color: rgba(0, 0, 0, .87);
+}
+
+h1 {
+	min-height: 1rem;
+	font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+pre {
+	font-family: 'Noto Sans KR', sans-serif;
+	white-space: pre-wrap;
+	color: #666;
+	font-size: 1em;
+	margin: 1em 0px;
+	letter-spacing: -1px;
+	line-height: 1.4285em;
+}
+
+@charset "utf-8";
+
+.ui.vertical.doubling.stripe.segment {
+	
+}
+
+pre {
+	font-family: 'Noto Sans KR', sans-serif;
+	white-space: pre-wrap;
+	color: #666;
+	font-size: 0.8em;
+}
+
+.ui.vertical.stripe {
+	padding-top: 4em;
+	padding-bottom: 4em;
+}
+
+.container {
+	padding: 2.5rem;
+	background-color: #ffffff;
+}

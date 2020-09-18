@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- JAVA와 연결할 Mapper 파일 설정 -->
+<mapper namespace="poly.persistance.mapper.CommentMapper">
+
+	<!-- 자유게시판 댓글 리스트 보여주기 쿼리 -->
+	<select id="f_commentList" resultType="F_CommentDTO" parameterType="String">
+		SELECT
+			F_SEQ,
+			BOARD_SEQ,
+			CONTENT,
+			WRITER,
+			REG_DT
+		FROM
+			F_COMMENT
+		WHERE
+			BOARD_SEQ = #{board_seq}
+		ORDER BY REG_DT DESC
+	</select>
+	
+	<!-- 자유게시판  댓글 등록 -->
+ 	<insert id="f_commentAdd_Proc" parameterType="F_CommentDTO">
+		INSERT INTO
+		F_COMMENT
+		(
+			F_SEQ,
+			BOARD_SEQ,
+			CONTENT,
+			WRITER,
+			REG_DT
+		)
+		VALUES
+		(
+			(SELECT NVL(MAX(A.F_SEQ),0)+1 FROM F_COMMENT A),
+			#{board_seq},
+			#{content},
+			#{writer},
+			SYSDATE
+		)
+	</insert>
+	
+	<!-- 자유게시판  댓글 삭제 -->
+	<delete id="f_commentDelete" parameterType="F_CommentDTO">
+		DELETE
+		FROM
+			F_COMMENT
+		WHERE
+			F_SEQ = #{f_seq}	
+	</delete>
+	
+	<!-- 자유게시판  댓글 수정 -->
+	<update id="f_commentModify" parameterType="F_CommentDTO">
+		UPDATE
+			F_COMMENT
+		SET
+			CONTENT = #{content},
+			REG_DT = SYSDATE
+		WHERE
+			F_SEQ = #{f_seq}
+	</update>
+
+
+	<!-- 리뷰게시판 댓글 리스트 보여주기 쿼리 -->
+	<select id="r_commentList" resultType="R_CommentDTO" parameterType="String">
+		SELECT
+			R_SEQ,
+			BOARD_SEQ,
+			CONTENT,
+			WRITER,
+			REG_DT
+		FROM
+			R_COMMENT
+		WHERE
+			BOARD_SEQ = #{board_seq}
+		ORDER BY REG_DT DESC
+	</select>
+	
+	<!-- 리뷰게시판  댓글 추가 -->
+ 	<insert id="r_commentAdd_Proc" parameterType="R_CommentDTO">
+		INSERT INTO
+		R_COMMENT
+		(
+			R_SEQ,
+			BOARD_SEQ,
+			CONTENT,
+			WRITER,
+			REG_DT
+		)
+		VALUES
+		(
+			(SELECT NVL(MAX(A.R_SEQ),0)+1 FROM R_COMMENT A),
+			#{board_seq},
+			#{content},
+			#{writer},
+			SYSDATE
+		)
+	</insert>
+	
+	<!-- 리뷰게시판  댓글 삭제 -->
+	<delete id="r_commentDelete" parameterType="R_CommentDTO">
+		DELETE
+		FROM
+			R_COMMENT
+		WHERE
+			R_SEQ = #{r_seq}
+	</delete>
+	
+	<!-- 리뷰게시판 댓글 수정 -->
+	<update id="r_commentModify" parameterType="R_CommentDTO">
+		UPDATE
+			R_COMMENT
+		SET
+			CONTENT = #{content},
+			REG_DT = SYSDATE
+		WHERE
+			R_SEQ = #{r_seq}
+	</update>
+	
+	<!-- 마이페이지_리뷰게시물_댓글 수 -->
+	<select id="getMypage_Review_CommentCnt" resultType="String">
+		SELECT
+			COUNT(R_SEQ)
+		FROM
+			R_COMMENT
+		WHERE
+			WRITER = #{writer}
+	</select>
+	
+	<!-- 마이페이지_리뷰게시물_댓글 리스트 -->	
+	<select id="getMypage_review_commentList" resultType="R_CommentDTO">
+		<![CDATA[
+		SELECT
+			R_SEQ,
+			BOARD_SEQ,
+			CONTENT,
+			WRITER,
+			REG_DT
+		FROM
+			(
+				SELECT
+					A.*,
+					ROWNUM AS RNUM
+				FROM
+					(
+						SELECT
+							*
+						FROM 
+							R_COMMENT
+						WHERE
+							WRITER=#{writer}
+						ORDER BY 
+							R_SEQ DESC
+					) A
+				WHERE
+					ROWNUM <= #{endNum}
+			)
+		WHERE
+			RNUM >= #{startNum}
+		]]>
+	</select>	
+	
+	<!-- 마이페이지_자유게시물_댓글 수 -->
+	<select id="getMypage_Free_CommentCnt" resultType="String">
+		SELECT
+			COUNT(F_SEQ)
+		FROM
+			F_COMMENT
+		WHERE
+			WRITER = #{writer}
+	</select>
+	
+	<!-- 마이페이지_자유게시물_댓글 리스트 -->	
+	<select id="getMypage_free_commentList" resultType="F_CommentDTO">
+		<![CDATA[
+		SELECT
+			F_SEQ,
+			BOARD_SEQ,
+			CONTENT,
+			WRITER,
+			REG_DT
+		FROM
+			(
+				SELECT
+					A.*,
+					ROWNUM AS RNUM
+				FROM
+					(
+						SELECT
+							*
+						FROM 
+							F_COMMENT
+						WHERE
+							WRITER=#{writer}
+						ORDER BY 
+							F_SEQ DESC
+					) A
+				WHERE
+					ROWNUM <= #{endNum}
+			)
+		WHERE
+			RNUM >= #{startNum}
+		]]>
+	</select>	
+</mapper>
